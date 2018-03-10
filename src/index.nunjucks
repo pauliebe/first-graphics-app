@@ -12,5 +12,12 @@
 
 {% block content %}
 
-<p> Hello World. </p>
+{% for obj in site.data.harvard_park_homicides %}
+  {% if obj.image %}
+    <img src="{{ obj.image }}" width="200px">
+  {% endif %}
+  <h3> {{ obj.first_name }} {{ obj.last_name }} </h3>
+  <p> {{ obj.death_year }} </p>
+{% endfor %}
+
 {% endblock %}
